@@ -51,42 +51,41 @@
               <h1>Molecular Coevolution</h1>
               <span class="image main"><img src="images/1088structures_banner.png" alt="" /></span>
               <p>The structure and function of macromolecules result from the interactions of their constitutive parts.
-              <q cite='#Achaz2021'>These shared constraints lead to genetic interactions called <em>epistasis</em></q>: the fitness effect of a mutation at one position in the genome varies depending on the sequence states at other interacting positions, possibly in the same gene, or in another gene of the same genome, or even in the genome of another species.
+              <q cite='#Achaz2021'>These shared constraints lead to genetic interactions called <em>epistasis</em> [1]</q>: the fitness effect of a mutation at one position in the genome varies depending on the sequence states at other interacting positions, possibly in the same gene, or in another gene of the same genome, or even in the genome of another species.
               From an evolutionary perspective, this means that these positions will not evolve independently.
-              <q cite='#Dutheil2007b'>This non-independent evolution of genome positions is what we call <em>molecular coevolution</em></q>.</p>
-
-              <ol>
-                <li id='#Achaz2021'>Achaz G, Dutheil JY. Correlated evolution: models and methods. <cite>arXiv</cite> <time datetime='2021'>2021</time>.  	arXiv:2103.11809.</li>
-                <li id='#Dutheil2007b'>Galtier N, Dutheil J. Coevolution within and between genes. <cite>Genome Dyn.</cite> <time datetime='2007'>2007</time>;3:1-12. doi:10.1159/000107599.</li>
-              </ol>
-
+              <q cite='#Dutheil2007b'>This non-independent evolution of genome positions is what we call <em>molecular coevolution</em> [2]</q>.</p>
 
               <h2>Detecting coevolving positions from sequence data</h2>
 
               <p>The detection of coevolving positions from sequence alignments has a rather long history.
-        We detect coevolving positions by the mean of co-substitutions, that is, mutations at two positions that were fixed in the same branches of the phylogeny.
-        This approach requires to first map all substitutions, for every position in the sequence alignment and every branch of the underlying phylogeny, via a procedure called <em>substitution mapping</em>.
-        The underlying algorithm makes use of a model of sequence evolution, to properly account for possible multiple substitutions on a branch, variation of evolutionary rates between sites, and the uncertainty in ancestral states at the inner nodes of the phylogenetic tree.</p>
+              We detect coevolving positions by the mean of co-substitutions, that is, mutations at two positions that were fixed in the same branches of the phylogeny.
+              This approach requires to first map all substitutions, for every position in the sequence alignment and every branch of the underlying phylogeny, <q cite='#Dutheil2005'>via a procedure called <em>substitution mapping</em></q>.
+              The underlying algorithm makes use of a model of sequence evolution, to properly account for possible multiple substitutions on a branch, variation of evolutionary rates between sites, and the uncertainty in ancestral states at the inner nodes of the phylogenetic tree.</p>
 
-              <p>The resulting substitution maps serves as input to several measures of coevolution between two or more sites. The statistical significance of these measures are then assessed by simulations, by generating alignments using phylogenetic models of sequence evolution, as inferred first on the real data.
-        The simulated dataset replicate the real data in many aspects, notably the underlying phylogeny and site-specific substitution rates, yet with all positions evolving independently.
-        This allows to estimate the distribution of the coevolution statistics under the null hypothesis of independence.
-        All calculations are implemented in the open-source software (<a href="http://jydu.github.io/comap/">CoMap</a>).</p>
-
-              <ol>
-                <li id='#Dutheil2005'></li>
-                <li id='#Dutheil2007a'></li>
-              </ol>
-
+              <p><q cite='#Dutheil2007a'>The resulting substitution maps serves as input to several measures of coevolution between two or more sites</q>. The statistical significance of these measures are then assessed by simulations, by generating alignments using phylogenetic models of sequence evolution, as inferred first on the real data.
+              The simulated dataset replicate the real data in many aspects, notably the underlying phylogeny and site-specific substitution rates, yet with all positions evolving independently.
+              This allows to estimate the distribution of the coevolution statistics under the null hypothesis of independence.
+              All calculations are implemented in the open-source software (<a href="http://jydu.github.io/comap/">CoMap</a>).</p>
   
 
               <h2>Building an atlas of protein coevolution</h2>
 
-        <p>Under construction.</p>
+              <p>Under construction.</p>
 
               <h2>Experimentally assessing epistatic interactions</h2>
         
-        <p>Under construction.</p>
+              <p>Under construction.</p>
+
+              <h2>References</h2>
+
+              <ol>
+                <li id='#Achaz2021'>Achaz G, Dutheil JY. Correlated evolution: models and methods. <cite>arXiv.</cite> <time datetime='2021'>2021</time>.    arXiv:2103.11809.</li>
+                <li id='#Dutheil2007b'>Galtier N, Dutheil J. Coevolution within and between genes. <cite>Genome Dyn.</cite> <time datetime='2007'>2007</time>;3:1-12. doi:10.1159/000107599.</li>
+                <li id='#Dutheil2005'>Dutheil J, Pupko T, Jean-Marie A, Galtier N. A model-based approach for detecting coevolving positions in a molecule. <cite>Mol Biol Evol.</cite> <time dattime='2005'>2005</time>;22(9):1919-28. doi:10.1093/molbev/msi183</li>
+                <li id='#Dutheil2007a'>Dutheil J, Galtier N. Detecting groups of coevolving positions in a molecule: a clustering approach. <cite>BMC Evol Biol.</cite> <time datetime='2007'>2007</time>;7:242. doi: 10.1186/1471-2148-7-242</li>
+              </ol>
+
+
 
             </div>
           </div>
