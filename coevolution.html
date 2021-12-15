@@ -109,13 +109,11 @@
       <script src="assets/js/util.js"></script>
       <script src="assets/js/main.js"></script>
       <script>
-        /*
-        $(function() {
-          $('q').click(function() {
-            window.location = $(this).attr('cite');
-          });
-        });
-        */
+        // Non jQuery handler
+        var quotes = document.getElementsByTagName('q');
+        for (var i in quotes) {
+          quotes[i].addEventListener('click', function() { window.location = this.getAttribute('cite'); }, false);
+        }
       </script>
   </body>
 </html>
