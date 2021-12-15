@@ -62,7 +62,7 @@
               This approach requires to first map all substitutions, for every position in the sequence alignment and every branch of the underlying phylogeny, <q cite='#Dutheil2005'>via a procedure called <em>substitution mapping</em> [3]</q>.
               The underlying algorithm makes use of a model of sequence evolution, to properly account for possible multiple substitutions on a branch, variation of evolutionary rates between sites, and the uncertainty in ancestral states at the inner nodes of the phylogenetic tree.</p>
 
-              <p><q cite='#Dutheil2007a'>The resulting substitution maps serves as input to several measures of coevolution between two or more sites[4]</q>. The statistical significance of these measures are then assessed by simulations, by generating alignments using phylogenetic models of sequence evolution, as inferred first on the real data.
+              <p><q cite='#Dutheil2007a'>The resulting substitution maps serves as input to several measures of coevolution between two or more sites [4]</q>. The statistical significance of these measures are then assessed by simulations, by generating alignments using phylogenetic models of sequence evolution, as inferred first on the real data.
               The simulated dataset replicate the real data in many aspects, notably the underlying phylogeny and site-specific substitution rates, yet with all positions evolving independently.
               This allows to estimate the distribution of the coevolution statistics under the null hypothesis of independence.
               All calculations are implemented in the open-source software (<a href="http://jydu.github.io/comap/">CoMap</a>).</p>
@@ -111,7 +111,7 @@
         // Non jQuery handler
         var quotes = document.getElementsByTagName('q');
         for (var i in quotes) {
-          quotes[i].addEventListener('click', function() { window.location = this.getAttribute('cite'); alert("click");}, false);
+          quotes[i].addEventListener('click', function() { window.location = this.getAttribute('cite'); alert(this.getAttribute('cite'));}, false);
         }
       </script>
   </body>
