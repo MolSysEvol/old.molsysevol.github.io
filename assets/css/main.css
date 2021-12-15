@@ -46,6 +46,20 @@ blockquote, q {
 		content: none;
 	}
 
+q {
+	cursor:pointer;
+	text-decoration: underline;
+}
+
+q:hover {
+	color:#caccc9;
+	background-color:#222;
+}
+
+cite {
+	font-style:normal;
+}
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
