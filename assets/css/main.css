@@ -33,6 +33,11 @@ body {
 	line-height: 1;
 }
 
+figure {
+	float: right;
+	margin: 0 0 0 2em;
+}
+
 ol, ul {
 	list-style: none;
 }
