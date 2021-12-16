@@ -1,129 +1,108 @@
 <!DOCTYPE HTML>
 <html>
-  <head>
-    <title>Molecular Coevolution</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-  </head>
-  <body class="is-preload">
-    <!-- Wrapper -->
-      <div id="wrapper">
-
-        <!-- Header -->
-          <header id="header">
-            <div class="inner">
-
-              <!-- Logo -->
-                <a href="index.html" class="logo">
-                  <span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Molecular Systems Evolution</span>
-                </a>
-
-              <!-- Nav -->
-                <nav>
-                  <ul>
-                    <li><a href="#menu">Menu</a></li>
-                  </ul>
-                </nav>
-
-            </div>
-          </header>
-
-        <!-- Menu -->
-          <nav id="menu">
-            <h2>Menu</h2>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="coevolution.html">Molecular Coevolution</a></li>
-              <li><a href="popgen_modeling.html">Population Genomics Modeling</a></li>
-              <li><a href="gene_networks.html">Evolutionary Models of Gene Networks</a></li>
-              <li><a href="adaptive_evolution.html">Adaptive evolution</a></li>
-              <li><a href="fungi_genomics.html">Population Genomics of Fungi</a></li>
-              <li><a href="software.html">Data and Software</a></li>
-              <li><a href="people.html">People</a></li>
-            </ul>
-          </nav>
-
-        <!-- Main -->
-          <div id="main">
-            <div class="inner">
-              <h1>Molecular Coevolution</h1>
-              <span class="image main"><img src="images/1088structures_banner.png" alt="" /></span>
-              <p>The structure and function of macromolecules result from the interactions of their constitutive parts.
-              <q cite='#Achaz2021'>These shared constraints lead to genetic interactions called <em>epistasis</em> [1]</q>: the fitness effect of a mutation at one position in the genome varies depending on the sequence states at other interacting positions, possibly in the same gene, or in another gene of the same genome, or even in the genome of another species.
-              From an evolutionary perspective, this means that these positions will not evolve independently.
-              <q cite='#Dutheil2007b'>This non-independent evolution of genome positions is what we call <em>molecular coevolution</em> [2]</q>.</p>
-
-              <h2>Detecting coevolving positions from sequence data</h2>
-
-	      <figure>
-		<img src="images/Chaurasia2021-Figure1AB.png" alt="Example of substitution mapping" width="300px" />
-		<figcaption style="width: 300px">
-			Figure 1: Example of substitution mapping.
-		</figcaption>
-	      </figure>
-
-              <p>The detection of coevolving positions from sequence alignments has a rather long history.
-              We detect coevolving positions by the mean of co-substitutions, that is, mutations at two positions that were fixed in the same branches of the phylogeny.
-              This approach requires to first map all substitutions, for every position in the sequence alignment and every branch of the underlying phylogeny, <q cite='#Dutheil2005'>via a procedure called <em>substitution mapping</em> [3]</q>.
-              The underlying algorithm makes use of a model of sequence evolution, to properly account for possible multiple substitutions on a branch, variation of evolutionary rates between sites, and the uncertainty in ancestral states at the inner nodes of the phylogenetic tree.</p>
-
-              <p><q cite='#Dutheil2007a'>The resulting substitution maps serves as input to several measures of coevolution between two or more sites [4]</q>. The statistical significance of these measures are then assessed by simulations, by generating alignments using phylogenetic models of sequence evolution, as inferred first on the real data.
-              The simulated dataset replicate the real data in many aspects, notably the underlying phylogeny and site-specific substitution rates, yet with all positions evolving independently.
-              This allows to estimate the distribution of the coevolution statistics under the null hypothesis of independence.
-              All calculations are implemented in the open-source software (<a href="http://jydu.github.io/comap/">CoMap</a>).</p>
-  
-	      <p>
-	      Legend of Figure 1:  The studied protein is a homotetramer (A). The two coevolving positions undergo compensatory mutations, at least on two branches of the phylogeny (B). Mutational changes (here for amino-acid charge) are depicted in red (charge increase) and blue (charge decrease). See <q cite='#Chaurasia2021'>[5] for details</q>.</p>
-
-
-              <h2>Building an atlas of protein coevolution</h2>
-
-              <p>Under construction.</p>
-
-              <h2>Experimentally assessing epistatic interactions</h2>
-        
-              <p>Under construction.</p>
-
-              <h2>References</h2>
-
-              <ol>
-                <li id='Achaz2021'>Achaz G, Dutheil JY. Correlated evolution: models and methods. <cite>arXiv.</cite> <time datetime='2021'>2021</time>.    arXiv:2103.11809.</li>
-                <li id='Dutheil2007b'>Galtier N, Dutheil J. Coevolution within and between genes. <cite>Genome Dyn.</cite> <time datetime='2007'>2007</time>;3:1-12. doi:10.1159/000107599.</li>
-                <li id='Dutheil2005'>Dutheil J, Pupko T, Jean-Marie A, Galtier N. A model-based approach for detecting coevolving positions in a molecule. <cite>Mol Biol Evol.</cite> <time dattime='2005'>2005</time>;22(9):1919-28. doi:10.1093/molbev/msi183</li>
-                <li id='Dutheil2007a'>Dutheil J, Galtier N. Detecting groups of coevolving positions in a molecule: a clustering approach. <cite>BMC Evol Biol.</cite> <time datetime='2007'>2007</time>;7:242. doi: 10.1186/1471-2148-7-242</li>
-                <li id='Chaurasia2021'>Chaurasia S, Dutheil J. The structural determinants of intra-protein compensatory substitutions. <cite>biorXiv.</cite> <time datetime='2021'>2021</time>. doi: https://doi.org/10.1101/2021.11.11.468231</li>
-              </ol>
-
-
-
-            </div>
-          </div>
-
-        <!-- Footer -->
-          <footer id="footer">
-            <div class="inner">
-              <ul class="copyright">
-                <li>&copy; Julien Y. Dutheil. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-              </ul>
-            </div>
-          </footer>
-
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
+  <title>Molecular Coevolution</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="assets/css/main.css"><noscript>
+  <link rel="stylesheet" href="assets/css/noscript.css"></noscript>
+</head>
+<body class="is-preload">
+  <!-- Wrapper -->
+  <div id="wrapper">
+    <!-- Header -->
+    <header id="header">
+      <div class="inner">
+        <!-- Logo -->
+        <a href="index.html" class="logo"><span class="symbol"><img src="images/logo.svg" alt=""></span><span class="title">Molecular Systems Evolution</span></a> <!-- Nav -->
+        <nav>
+          <ul>
+            <li>
+              <a href="#menu">Menu</a>
+            </li>
+          </ul>
+        </nav>
       </div>
-
-    <!-- Scripts -->
-      <script src="assets/js/jquery.min.js"></script>
-      <script src="assets/js/browser.min.js"></script>
-      <script src="assets/js/breakpoints.min.js"></script>
-      <script src="assets/js/util.js"></script>
-      <script src="assets/js/main.js"></script>
-      <script>
+    </header><!-- Menu -->
+    <nav id="menu">
+      <h2>Menu</h2>
+      <ul>
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="coevolution.html">Molecular Coevolution</a>
+        </li>
+        <li>
+          <a href="popgen_modeling.html">Population Genomics Modeling</a>
+        </li>
+        <li>
+          <a href="gene_networks.html">Evolutionary Models of Gene Networks</a>
+        </li>
+        <li>
+          <a href="adaptive_evolution.html">Adaptive evolution</a>
+        </li>
+        <li>
+          <a href="fungi_genomics.html">Population Genomics of Fungi</a>
+        </li>
+        <li>
+          <a href="software.html">Data and Software</a>
+        </li>
+        <li>
+          <a href="people.html">People</a>
+        </li>
+      </ul>
+    </nav><!-- Main -->
+    <div id="main">
+      <div class="inner">
+        <h1>Molecular Coevolution</h1><span class="image main"><img src="images/1088structures_banner.png" alt=""></span>
+        <p>The structure and function of macromolecules result from the interactions of their constitutive parts. <q cite='#Achaz2021'>These shared constraints lead to genetic interactions called <em>epistasis</em> [1]</q>: the fitness effect of a mutation at one position in the genome varies depending on the sequence states at other interacting positions, possibly in the same gene, or in another gene of the same genome, or even in the genome of another species. From an evolutionary perspective, this means that these positions will not evolve independently. <q cite='#Dutheil2007b'>This non-independent evolution of genome positions is what we call <em>molecular coevolution</em> [2]</q>.</p>
+        <h2>Detecting coevolving positions from sequence data</h2>
+        <figure>
+          <img src="images/Chaurasia2021-Figure1AB.png" alt="Example of substitution mapping" width="300px">
+          <figcaption style="width: 300px">
+            Figure 1: Example of substitution mapping.
+          </figcaption>
+        </figure>
+        <p>The detection of coevolving positions from sequence alignments has a rather long history. We detect coevolving positions by the mean of co-substitutions, that is, mutations at two positions that were fixed in the same branches of the phylogeny. This approach requires to first map all substitutions, for every position in the sequence alignment and every branch of the underlying phylogeny, <q cite='#Dutheil2005'>via a procedure called <em>substitution mapping</em> [3]</q>. The underlying algorithm makes use of a model of sequence evolution, to properly account for possible multiple substitutions on a branch, variation of evolutionary rates between sites, and the uncertainty in ancestral states at the inner nodes of the phylogenetic tree.</p>
+        <p><q cite='#Dutheil2007a'>The resulting substitution maps serves as input to several measures of coevolution between two or more sites [4]</q>. The statistical significance of these measures are then assessed by simulations, by generating alignments using phylogenetic models of sequence evolution, as inferred first on the real data. The simulated dataset replicate the real data in many aspects, notably the underlying phylogeny and site-specific substitution rates, yet with all positions evolving independently. This allows to estimate the distribution of the coevolution statistics under the null hypothesis of independence. All calculations are implemented in the open-source software (<a href="http://jydu.github.io/comap/">CoMap</a>).</p>
+        <p>Legend of Figure 1: The studied protein is a homotetramer (A). The two coevolving positions undergo compensatory mutations, at least on two branches of the phylogeny (B). Mutational changes (here for amino-acid charge) are depicted in red (charge increase) and blue (charge decrease). See <q cite='#Chaurasia2021'>[5] for details</q>.</p>
+        <h2>Building an atlas of protein coevolution</h2>
+        <p>Under construction.</p>
+        <h2>Experimentally assessing epistatic interactions</h2>
+        <p>Under construction.</p>
+        <h2>References</h2>
+        <ol>
+          <li id='Achaz2021'>Achaz G, Dutheil JY. Correlated evolution: models and methods. <cite>arXiv.</cite> <time datetime='2021'>2021</time>. arXiv:2103.11809.</li>
+          <li id='Dutheil2007b'>Galtier N, Dutheil J. Coevolution within and between genes. <cite>Genome Dyn.</cite> <time datetime='2007'>2007</time>;3:1-12. doi:10.1159/000107599.</li>
+          <li id='Dutheil2005'>Dutheil J, Pupko T, Jean-Marie A, Galtier N. A model-based approach for detecting coevolving positions in a molecule. <cite>Mol Biol Evol.</cite> <time dattime='2005'>2005</time>;22(9):1919-28. doi:10.1093/molbev/msi183</li>
+          <li id='Dutheil2007a'>Dutheil J, Galtier N. Detecting groups of coevolving positions in a molecule: a clustering approach. <cite>BMC Evol Biol.</cite> <time datetime='2007'>2007</time>;7:242. doi: 10.1186/1471-2148-7-242</li>
+          <li id='Chaurasia2021'>Chaurasia S, Dutheil J. The structural determinants of intra-protein compensatory substitutions. <cite>biorXiv.</cite> <time datetime='2021'>2021</time>. doi: https://doi.org/10.1101/2021.11.11.468231</li>
+        </ol>
+      </div>
+    </div><!-- Footer -->
+    <footer id="footer">
+      <div class="inner">
+        <ul class="copyright">
+          <li>© Julien Y. Dutheil. All rights reserved</li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </div><!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script> 
+  <script src="assets/js/browser.min.js"></script> 
+  <script src="assets/js/breakpoints.min.js"></script> 
+  <script src="assets/js/util.js"></script> 
+  <script src="assets/js/main.js"></script> 
+  <script>
         // Non jQuery handler
         var quotes = document.getElementsByTagName('q');
         for (var i in quotes) {
           quotes[i].addEventListener('click', function() { window.location = this.getAttribute('cite'); }, false);
         }
-      </script>
-  </body>
+  </script>
+</body>
 </html>
