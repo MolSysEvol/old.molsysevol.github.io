@@ -58,6 +58,7 @@
       <div class="inner">
         <h1>Molecular Coevolution</h1><span class="image main"><img src="images/1088structures_banner.png" alt=""></span>
         <p>The structure and function of macromolecules result from the interactions of their constitutive parts. <q cite='#Achaz2021'>These shared constraints lead to genetic interactions called <em>epistasis</em> [1]</q>: the fitness effect of a mutation at one position in the genome varies depending on the sequence states at other interacting positions, possibly in the same gene, or in another gene of the same genome, or even in the genome of another species. From an evolutionary perspective, this means that these positions will not evolve independently. <q cite='#Dutheil2007b'>This non-independent evolution of genome positions is what we call <em>molecular coevolution</em> [2]</q>.</p>
+
         <h2>Detecting coevolving positions from sequence data</h2>
         <figure>
           <img src="images/Chaurasia2021-Figure1AB.png" alt="Example of substitution mapping" width="300px">
@@ -65,14 +66,39 @@
             Figure 1: Example of substitution mapping.
           </figcaption>
         </figure>
-        <p>The detection of coevolving positions from sequence alignments has a rather long history. We detect coevolving positions by the mean of co-substitutions, that is, mutations at two positions that were fixed in the same branches of the phylogeny. This approach requires to first map all substitutions, for every position in the sequence alignment and every branch of the underlying phylogeny, <q cite='#Dutheil2005'>via a procedure called <em>substitution mapping</em> [3]</q>. The underlying algorithm makes use of a model of sequence evolution, to properly account for possible multiple substitutions on a branch, variation of evolutionary rates between sites, and the uncertainty in ancestral states at the inner nodes of the phylogenetic tree.</p>
+        <p>The detection of coevolving positions from sequence alignments has a rather long history. We detect coevolving positions by the mean of co-substitutions, that is, mutations at two positions that were fixed in the same branches of the phylogeny. This approach requires to first map all substitutions, for every position in the sequence alignment and every branch of the underlying phylogeny, <q cite='#Dutheil2005'>via a procedure called <em>substitution mapping</em> [3] (Figure 1)</q>. The underlying algorithm makes use of a model of sequence evolution, to properly account for possible multiple substitutions on a branch, variation of evolutionary rates between sites, and the uncertainty in ancestral states at the inner nodes of the phylogenetic tree.</p>
         <p><q cite='#Dutheil2007a'>The resulting substitution maps serves as input to several measures of coevolution between two or more sites [4]</q>. The statistical significance of these measures are then assessed by simulations, by generating alignments using phylogenetic models of sequence evolution, as inferred first on the real data. The simulated dataset replicate the real data in many aspects, notably the underlying phylogeny and site-specific substitution rates, yet with all positions evolving independently. This allows to estimate the distribution of the coevolution statistics under the null hypothesis of independence. All calculations are implemented in the open-source software (<a href="http://jydu.github.io/comap/">CoMap</a>).</p>
         <p>Legend of Figure 1: The studied protein is a homotetramer (A). The two coevolving positions undergo compensatory mutations, at least on two branches of the phylogeny (B). Mutational changes (here for amino-acid charge) are depicted in red (charge increase) and blue (charge decrease). See <q cite='#Chaurasia2021'>[5] for details</q>.</p>
+
         <h2>Building an atlas of protein coevolution</h2>
-        <p>Under construction.</p>
+        <figure>
+          <img src="images/Chaurasia2021-Figure3.png" alt="Content of the Atlas of Protein Coevolution" width="600px">
+          <figcaption style="width: 600px">
+            Figure 2: The Atlas of Protein Coevolution database
+          </figcaption>
+        </figure>
+        
+	<p>With Dr Shilpi Chaurasia, <q cite='#Chaurasia2021'>we built a large dataset of protein families for which at least one 3D structure was available</q>.
+	We used the HOGENOM6 database as input, realigned all protein families, filtering sequences and sites to obtain a currated dataset of 1,630 alignments and corresponding protein structures, encompassing species from the bacteria tree of life.
+	We reconstructed each family's phylogeny and run the CoMap method to detect groups of coevolving positions.
+	We focused on positions coevolving via compensatory mutations, using biochemical indices as proxies for fitness effects.
+	In addition to the classical "volume", "polarity", and "charge" properties, we used 8 genetic indices encompassing a broad range of biochemical properties.
+	This allowed us to detect 51,661 coevolving positions among 366,794 analyzed positions (Figure 2).
+	We then used statistical analyses to establish the properties of these positions.</p>
+	
+	<p>Our results show that coevolving residues tend to evolve slowly.
+	They are also more often located at the core of proteins, far from the surface, and outsides secondary structure motifs, but tend to be in contact in the 3D structure. 
+	These results hold after accounted for various possible confounding factors.
+	Interestingly, sites coevolving for charge compensation have a distinct pattern: they evolve faster and are exposed at the surface of proteins.</p>
+
+	<p>Our results show that compensatory mutations are rare, but widespread among proteins. 
+	They also highlight the existence of an intermediate level of selective pressure in protein structures, where inter-residues interactions enable protein structure and functions.</p>
+
+<p>Legend of Figure 2: UpSet representation of detected coevolving positions. The majority of positions are uniquely found by one method, and the "classical" biochemical properties "volume", "polarity" and "charge" lead to the largest number of coevolving positions.</p>
         <h2>Experimentally assessing epistatic interactions</h2>
         <p>Under construction.</p>
-        <h2>References</h2>
+        
+	<h2>References</h2>
         <ol>
           <li id='Achaz2021'>Achaz G, Dutheil JY. Correlated evolution: models and methods. <cite>arXiv.</cite> <time datetime='2021'>2021</time>. arXiv:2103.11809.</li>
           <li id='Dutheil2007b'>Galtier N, Dutheil J. Coevolution within and between genes. <cite>Genome Dyn.</cite> <time datetime='2007'>2007</time>;3:1-12. doi:10.1159/000107599.</li>
