@@ -59,6 +59,13 @@
         <h1>Molecular Coevolution</h1><span class="image main"><img src="images/1088structures_banner.png" alt=""></span>
         <p>The structure and function of macromolecules result from the interactions of their constitutive parts. <q cite='#Achaz2021'>These shared constraints lead to genetic interactions called <em>epistasis</em> [1]</q>: the fitness effect of a mutation at one position in the genome varies depending on the sequence states at other interacting positions, possibly in the same gene, or in another gene of the same genome, or even in the genome of another species. From an evolutionary perspective, this means that these positions will not evolve independently. <q cite='#Dutheil2007b'>This non-independent evolution of genome positions is what we call <em>molecular coevolution</em> [2]</q>.</p>
 
+	<p>The detection of coevolving positions from sequence alignments has a rather long history, which we can trace back to the first sequences of tRNA obtained in the 60s: comparing the set of possible Watson-Crick base pairing configurations in a few tRNA sequences enabled establish the clover-leaf structure model.
+	Comparative sequence analysis of RNA sequence has since then been successfully employed to infer secondary structures of other RNA molecules.
+	Extension to proteins came later, offering significant additional challenges. The size of the alphabet (20 amino-acids instead of 4 nucleotides, sharing various partially redundant biochemical-properties), and the multiplicity of possible interactions prevent simple approaches from detecting enough biologically relevant coevolving candidates. More elaborate statistical approaches, however, including machine learning algorithms, have proved to be able to extract structural signal from sequences alone, culminating with the recent success of AI algorithms in predicting protein structure from sequence information alone.</p>
+	
+	<p>That sequences covariation contains information about protein structure is now widely accepted, and proved to be of emprirical importance. That epistatic interactions, and in particular, compensatory mutations, can lead to coevolution was also theoretically show. It was also shown that sequence covariation patterns are generally good predictors of epistatic effects. Yet, much remain to be understood in the link between structural constraints, epistatic interactions, and coevolution.
+	Notably, how much compensatory mutations, which are predicted to be rare, occur in protein evolution? How much do they contribute, as a causal mechanism, to the observed patterns of sequence covariation?</p> 
+
         <h2>Detecting coevolving positions from sequence data</h2>
         <figure>
           <img src="images/Chaurasia2021-Figure1AB.png" alt="Example of substitution mapping" width="300px">
@@ -66,8 +73,9 @@
             Figure 1: Example of substitution mapping.
           </figcaption>
         </figure>
-        <p>The detection of coevolving positions from sequence alignments has a rather long history. We detect coevolving positions by the mean of co-substitutions, that is, mutations at two positions that were fixed in the same branches of the phylogeny. This approach requires to first map all substitutions, for every position in the sequence alignment and every branch of the underlying phylogeny, <q cite='#Dutheil2005'>via a procedure called <em>substitution mapping</em> [3] (Figure 1)</q>. The underlying algorithm makes use of a model of sequence evolution, to properly account for possible multiple substitutions on a branch, variation of evolutionary rates between sites, and the uncertainty in ancestral states at the inner nodes of the phylogenetic tree.</p>
-        <p><q cite='#Dutheil2007a'>The resulting substitution maps serves as input to several measures of coevolution between two or more sites [4]</q>. The statistical significance of these measures are then assessed by simulations, by generating alignments using phylogenetic models of sequence evolution, as inferred first on the real data. The simulated dataset replicate the real data in many aspects, notably the underlying phylogeny and site-specific substitution rates, yet with all positions evolving independently. This allows to estimate the distribution of the coevolution statistics under the null hypothesis of independence. All calculations are implemented in the open-source software (<a href="http://jydu.github.io/comap/">CoMap</a>).</p>
+	
+	<p>To detect coevolving positions, we first map all substitutions, for every position in the sequence alignment and every branch of the underlying phylogeny, <q cite='#Dutheil2005'>via a procedure called <em>substitution mapping</em> [3] (Figure 1)</q>. The underlying algorithm makes use of a model of sequence evolution, to properly account for possible multiple substitutions on a branch, variation of evolutionary rates between sites, and the uncertainty in ancestral states at the inner nodes of the phylogenetic tree.</p>
+        <p><q cite='#Dutheil2007a'>The resulting substitution maps serves as input to several measures of coevolution between two or more sites [4]</q>. We aim at detecting co-substitutions, that is, mutations at two positions that were fixed in the same branches of the phylogeny. The statistical significance of the coevolkution statistics are then assessed by simulations, by generating alignments using phylogenetic models of sequence evolution, as inferred first on the real data. The simulated dataset replicate the real data in many aspects, notably the underlying phylogeny and site-specific substitution rates, yet with all positions evolving independently. This allows to estimate the distribution of the coevolution statistics under the null hypothesis of independence. All calculations are implemented in the open-source software (<a href="http://jydu.github.io/comap/">CoMap</a>).</p>
         <p>Legend of Figure 1: The studied protein is a homotetramer (A). The two coevolving positions undergo compensatory mutations, at least on two branches of the phylogeny (B). Mutational changes (here for amino-acid charge) are depicted in red (charge increase) and blue (charge decrease). See <q cite='#Chaurasia2021'>[5] for details</q>.</p>
 
         <h2>Building an atlas of protein coevolution</h2>
@@ -78,7 +86,7 @@
           </figcaption>
         </figure>
         
-	<p>With Dr Shilpi Chaurasia, <q cite='#Chaurasia2021'>we built a large dataset of protein families for which at least one 3D structure was available</q>.
+	<p>We aim at characterising the frequency, type, and ditribution of compensatory mutations in protein evolution. With Dr Shilpi Chaurasia, <q cite='#Chaurasia2021'>we built a large dataset of protein families for which at least one 3D structure was available</q>.
 	We used the HOGENOM6 database as input, realigned all protein families, filtering sequences and sites to obtain a currated dataset of 1,630 alignments and corresponding protein structures, encompassing species from the bacteria tree of life.
 	We reconstructed each family's phylogeny and run the CoMap method to detect groups of coevolving positions.
 	We focused on positions coevolving via compensatory mutations, using biochemical indices as proxies for fitness effects.
@@ -95,8 +103,12 @@
 	They also highlight the existence of an intermediate level of selective pressure in protein structures, where inter-residues interactions enable protein structure and functions.</p>
 
 <p>Legend of Figure 2: UpSet representation of detected coevolving positions. The majority of positions are uniquely found by one method, and the "classical" biochemical properties "volume", "polarity" and "charge" lead to the largest number of coevolving positions.</p>
+
         <h2>Experimentally assessing epistatic interactions</h2>
-        <p>Under construction.</p>
+        
+	<p>As part of his PhD work, Dr Bilal Haider selected candidate positions with a strong signal of coevolution and with inferred cosubstitutions on the <i>E. coli</i> branch to assess whether compensatory mutations are the mechanism behind the inferred cosubstitutions. 
+	He then inferred the ancestral sequences <i>in silico</i> using models of sequence evolution, and resurrected the corresponding genotypes by reverting the mutations in <i>E. coli</i> extant strains.
+	He used competition experiments to infer pairwise relative fitness values for each genotype, and fitted models of fitness landscapes to infer the fitness effect of each mutation. Results are reported in a manuscript currently in preparation.</p>
         
 	<h2>References</h2>
         <ol>
