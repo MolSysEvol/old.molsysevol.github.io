@@ -1,0 +1,51 @@
+\documentclass{article}
+
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+
+\pagestyle{empty}
+
+\begin{document}
+		\begin{tikzpicture}[line width=2pt, xscale=1.2, yscale = 0.8]
+			\draw[->](0,0) -- (23,0);
+			\draw(0, -0.25) -- (0, 0.25) node[above, right, rotate = 45]{1999};
+			\draw[line width=1pt, dotted, opacity = 0.5] (0, -0.25) -- (0, -1) node[below, opacity = 1, fill = white] (n1) {Wiuf \& Hein};
+			
+			\draw(14, -0.25) -- (14, 0.25) node[above, right, rotate = 45]{2013};
+			\draw[line width=1pt, dotted, opacity = 0.5] (14, -0.25) -- (14, -11) node[below, opacity = 1, fill = white] (n2c) {diCal: Sheehan, Harris \& Song};
+			%\draw(12, -0.25) -- (12, 0.25) node[above, right, rotate = 45]{2011};
+			\draw[line width=1pt, dotted, opacity = 0.5] (12, -0.25) -- (12, -10) node[below, opacity = 1, fill = white] (n2b) {SMCSD: Paul, Steinrucken \& Song};
+			\draw(11, -0.25) -- (11, 0.25) node[above, right, rotate = 45]{2010};
+			\draw[line width=1pt, dotted, opacity = 0.5] (11, -0.25) -- (11, -9) node[below, opacity = 1, fill = white] (n2a) {CSD: Paul \& Song};
+			
+			\draw(13, -0.25) -- (13, 0.25) node[above, right, rotate = 45]{2012};
+			\draw[line width=1pt, dotted, opacity = 0.5] (13, -0.25) -- (13, -7) node[below, opacity = 1, fill = white] (n3a) {IM-CoalHMM: Mailund et al.};
+			% \draw(12, -0.25) -- (12, 0.25) node[above, right, rotate = 45]{2011};
+			\draw[line width=1pt, dotted, opacity = 0.5] (12, -0.25) -- (12, -6) node[below, opacity = 1, fill = white] (n3a) {I-CoalHMM: Mailund et al.};
+			\draw(10, -0.25) -- (10, 0.25) node[above, right, rotate = 45]{2009};
+			\draw[line width=1pt, dotted, opacity = 0.5] (10, -0.25) -- (10, -5) node[below, opacity = 1, fill = white] (n3b) {ILS-CoalHMM: Dutheil et al.};
+			\draw(8, -0.25) -- (8, 0.25) node[above, right, rotate = 45]{2007};
+			\draw[line width=1pt, dotted, opacity = 0.5] (8, -0.25) -- (8, -4) node[below, opacity = 1, fill = white] (n3c) {ILS-CoalHMM: Hobolth et al.};
+			
+			\draw(7, -0.25) -- (7, 0.25) node[above, right, rotate = 45]{2006};
+			\draw[line width=1pt, dotted, opacity = 0.5] (7, -0.25) -- (7, -2) node[below, opacity = 1, fill = white] (n4a) {SMC': Marjoram \& Wall};
+			\draw(6, -0.25) -- (6, 0.25) node[above, right, rotate = 45]{2005};
+			\draw[line width=1pt, dotted, opacity = 0.5] (6, -0.25) -- (6, -1) node[below, opacity = 1, fill = white] (n4b) {SMC: McVean \& Cardin};
+			
+			\draw(12, -0.25) -- (12, 0.25) node[above, right, rotate = 45]{2011};
+			\draw[line width=1pt, dotted, opacity = 0.5] (12, -0.25) -- (12, -2) node[below, opacity = 1, fill = white] (n5a) {PSMC: Li \& Durbin};
+			\draw(15, -0.25) -- (15, 0.25) node[above, right, rotate = 45]{2014};
+			\draw[line width=1pt, dotted, opacity = 0.5] (15, -0.25) -- (15, -3) node[below, opacity = 1, fill = white] (n5b) {MSMC: Schiffels \& Durbin};
+			
+			\draw(22, -0.25) -- (22, 0.25) node[above, right, rotate = 45]{2021};
+			\draw[line width=1pt, dotted, opacity = 0.5] (22, -0.25) -- (22, -8) node[below, opacity = 1, fill = white] (n6d) {eSMC: Sellinger et al.};
+			\draw(20, -0.25) -- (20, 0.25) node[above, right, rotate = 45]{2019};
+			\draw[line width=1pt, dotted, opacity = 0.5] (20, -0.25) -- (20, -7) node[below, opacity = 1, fill = white] (n6c) {$\iota$SMC: Barroso, Puzovi\'c \& Dutheil};
+			\draw(19, -0.25) -- (19, 0.25) node[above, right, rotate = 45]{2018};
+			\draw[line width=1pt, dotted, opacity = 0.5] (19, -0.25) -- (19, -6) node[below, opacity = 1, fill = white] (n6a) {aSMC: Palamara et al.};
+			\draw(18, -0.25) -- (18, 0.25) node[above, right, rotate = 45]{2017};
+			\draw[line width=1pt, dotted, opacity = 0.5] (18, -0.25) -- (18, -5) node[below, opacity = 1, fill = white] (n6b) {SMC++: Terhost, Kamm \& Song};
+		\end{tikzpicture}
+\end{document}

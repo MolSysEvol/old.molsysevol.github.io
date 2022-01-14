@@ -50,7 +50,39 @@
             <div class="inner">
               <h1>Population Genomics Modeling</h1>
               <span class="image main"><img src="images/ILS_explained_banner.png" alt="" /></span>
-              <p>Under construction.</p>
+              
+	      <p>Modeling the evolution of genomes in populations enables predicting the patterns of genetic diversity along the genome and between species.
+	      Combined with statistical inference methods, population genetic modeling confronts the predicted patterns with those observed in datasets of genomes in natural populations, permiting the inference of key parameters (demographic history, recombination landscapes, selection map, etc.), as well as testing of hypotheses regarding evolutionary processes by model comparison.</p>
+	      <p>The theoretical framework that makes these analyses possible is the <em>coalescent theory</em>, and, as far as sexually reproducing species are concerned, the so-called <em>coalescent with recombination</em>. In the presence of recombination, the history of a sample can be represented as a complex structure called an <<em>ancestral recombination graph</em>(ARG). The ARG is not directly measurable from the data, as many different ARGs can generate the same sequences.
+	      Inference methods, therefore, need to integrate over all possible ARGs - a computationally demanding procedure that prohibits the analysis of large sequences, <i>a fortiori</i> complete genome data.</p>
+	      <figure>
+          	<img src="images/SMC_chronology.png" alt="Development of the sequentially Markov coalescent (SMC)" width="850px" />
+	        <figcaption style="width: 850px">
+        	  Figure 1: Historical developments of the sequentially Markov coalescent model.
+          	</figcaption>
+              </figure>
+	      <p>The sequentially Markov coalescent (SMC) is a model that approximates the coalescent with recombination.
+	      The model as been developed and used over le last 20 years (Figure 1).
+	      By ignoring certain types of recombination events, the SMC is a markovian process along the genome: the genealogy at one position can be directly modeled from the genealogy at the previous position.
+	      This property allows using hidden Markov models to efficiently integrate over the ARG and infer model parameters over complete genome datasets.
+	      This approach has been termed <em>coalescent hidden Markov model (CoalHMM)</em>.</p>
+
+	      <p>A large set of SMC-based models has been developped, including increasingly complex demographic scenarios.
+	      These models, however, assume that the process is homogeneous along the analysed sequences.
+	      As the genealogical process depends, in part, on the recombination rate, this assumption is at odds with the large body of evidence for heterogeneous recombination landscapes.
+	      To address this issue, <q cite='#Dutheil2021'>we have developped and extension of the SMC that allows some parameters to vary along the genome</q>.</p>
+
+	      <h2>The integrative sequentially Markov coalescent, iSMC</h2>
+
+              <p>Under construction</p>
+
+	      <h2>References</h2>
+              <ol>
+                <li id='Dutheil2021'>Dutheil JY. Towards more realistic models of genomes in populations: The Markov-modulated
+			sequentially Markov coalescent, in <cite>Probabilistic Structures in Evolution.</cite> <time datetime='2021'>2021</time> European
+Mathematical Society Publishing House, 383408.</li>
+              </ol>
+
             </div>
           </div>
 
