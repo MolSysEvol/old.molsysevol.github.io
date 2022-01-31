@@ -74,13 +74,22 @@
 
 	      <h2>The integrative sequentially Markov coalescent, iSMC</h2>
 
-              <p>Under construction</p>
+	      <p>The HMM implementation of the SMC process for two genomes (<em>Pairwise Sequentially Markov Coalescent, PSMC)</em> depends on a transition matrix that is homogeneous along the analyzed sequences.
+	      The underlying transition probabilities depend on the demographic model (variation of population sizes in time) and a genome average recombination rate.
+	      We introduced a  <q cite='#Dutheil2021'>new modeling framework allowing any parameter to vary along the genome</q>.
+	      To do so, we consider that heterogeneous parameters follow an <i>a priori</i> distribution (which can have free parameters), and that the parameter values are auto-correlated along the genome, in a Markovian manner.
+	      As a result, the SMC become a Markov-modulate Markov process, which can be rewritten as a Markov process where the states are combinations of divergence classes (as in the PSMC) and heterogeneous parameter values.
+	      This methodology can then be used to infer site-specific parameter values, and was first applied to the <q cite='#Barroso2019'>inferrence of recombination rates</q> by Dr Gustavo Barroso during his PhD work, providing the first method to provide recombination map with a single, unphased, diploid genome.
+	      This allowed us to infer the recombination map of several ancient hominids.
+	      Lately, we further extended the model to <q cite='#Barroso2021'>account for both variable recombination and mutation rates</q>.</p> 
 
 	      <h2>References</h2>
               <ol>
                 <li id='Dutheil2021'>Dutheil JY. Towards more realistic models of genomes in populations: The Markov-modulated
 			sequentially Markov coalescent, in <cite>Probabilistic Structures in Evolution.</cite> <time datetime='2021'>2021</time> European
 Mathematical Society Publishing House, 383408.</li>
+		<li id='Barroso2019'>V Barroso G, Puzović N, Dutheil JY. Inference of recombination maps from a single pair of genomes and its application to ancient samples, <time datetime='2019'>2019</time>.  <cite>PLoS Genetics 15(11): e1008449.</cite></li> 
+				<li id='Barroso2021'>V Barroso G, Dutheil JY. Mutation rate variation shapes genome-wide diversity in Drosophila melanogaster, <time datetime='2021'>2021</time>.  <cite>bioRxiv <a href='https://doi.org/10.1101/2021.09.16.460667'>https://doi.org/10.1101/2021.09.16.460667</a>.</cite></li> 
               </ol>
 
             </div>
