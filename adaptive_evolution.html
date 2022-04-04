@@ -50,8 +50,63 @@
             <div class="inner">
               <h1>Adaptive Evolution</h1>
               <span class="image main"><img src="images/adaptive_substitutions_banner.png" alt="" /></span>
+	     
+              <p>By comparing sequences from distinct individuals it is possible to discover the mutations that occured in their ancestry.
+	      How many of these mutations contributed to adaptation, however, is the topic of a long-running debate.
+	      Our research aims at understanding which factors determine the occurrence of adaptive mutations along the genome.
+
+	      <h2>Estimating the rate of adaptation at the molecular level</h2>
+
+	      It is  possible to <q cite='#Moutinho2020'>gain insight about the rate of adaptive mutations by contrasting the mutation rate at distinct categories of sites (see [1] for review and references therein for a description of the methods)</q>:
+	      at neutral sites, the fate of mutations is independent of their type, and the substitution rate (that is, the rate at which mutations <b>get fixed</b> in the population) is equal to the mutation rate (the rate at which mutations <b>appear</b> in the population).
+	      At non-neutral sites, however, mutations that confer an advantage to the organism have a higher chance to become fixed in the population, leading to a higher substitution rate than the one at neutral sites.
+	      Conversely, so called-deleterious mutations (mutations with a negative effect for the individuals that carry them) have a lower chance to become fixed, leading to a reduce substitution rate. Contrasting the rate of substitutions at neutral and non-neutral sites, therefore, allows the estimation of the strength and direction of selection, accounting for the underlying mutation rate.</p>
+	      <p>In proteins, some mutations do not change the encoding amino-acid, owing to the degeneracy of the genetic code.
+	      Such mutations are termed <b>synonymous</b>, as opposed to <b>non-synonymouns</b> mutations that change the underlying amino-acid.
+	      As an approximation, one can consider that synonymous mutations are neutral, while non-synonumous ones are not.
+	      A measure of selection in proteins is then given by the ratio of non-synonymous over synonymous substitutions, <b>dN/dS</b>, also termed <b>&omega;</b>.
+	      The &omega; ratio, however, only represents an average of the selective forces acting on a protein.
+	      Given the prevalence of purifying selection in protein evolution it will be generally negative, making it difficult to detect positive selection when it happens.</p>
+	      <p>One way to estimate the part of the rate of substitutions that is adaptive is to combine sequences from distinct individuals from the same population with sequences from another species.
+	      The non-synonymous substitutions between species can be seen as the sum of two substitution types: adaptive non-synonymous substitutions dN<sub>a</sub> and non-adaptive non-synonymous substitutions dN<sub>na</sub>.
+	      The &omega; ratio can then be decomposed as 
+	      \[\begin{eqnarray}
+	      \omega &=& \frac{dN_a + dN_{na}}{dS}\\
+	      &=& \frac{dN_a}{dS} + \frac{dN_{na}}{dS}\\
+	      &=& \omega_a + \omega_{na}
+	      \end{eqnarray}\]
+	      </p>
+	      Positively selected mutations will be fixed rapidly and will rarely be seen when comparing sequences within populations.
+	      Deleterious mutations will be removed from the population, effectively reducing genetic diversity in the population.
+	      As a result, polymorphism will be essentially determined by neutral and deleterious mutations, so that the ratio of non-synonymous polymorphism, <b>pN</b>, over synonymous polymorphism, <b>pS</b>, provides an estimation of &omega;<sub>na</sub>.
+	      It results that \(\omega = \omega_a + pN/pS\). 
+	      An estimation of the proportion of adaptive non-synonymous sustitutions, &alpha;, is then given by
 	      
-              <p>Under construction.</p>
+	      \[\begin{eqnarray}
+	      \alpha &=& {\omega_a \over \omega}\\
+	             &=& {\omega - pN/pS \over \omega}\\
+		     &=& 1 - {pN/pS \over dN/dS}\\
+		     &=& 1 - {pN.dS \over pS.dN}
+	      \end{eqnarray}\]
+
+	      This simple estimation, however, ignores the occurrence of mutations with mild effects, negative of positive, that segregates as polymorphism.
+	      The rate of adaptive mutations is then underestimated. 
+	      This caveat can be addressed by using models of distribution of fitness effects (DFE).
+	      Model-based inferrence of adaptive substitution rate is a poweful method, which requires genome-sized datasets.
+	      By fitting and comparing models on distinct gene sets, it is possible to correlate the rate of molecular adaptation with genomic factors such as recombination rates, gene function, expression level, etc.
+	      </p>
+
+              <h2>The impact of protein structure on the rate of adaptive evolution</h2>
+
+	      <p>Under construction</h2>
+
+
+
+	      <h2>References</h2>
+              <ol>
+          	<li id='Moutinho2020'>Moutinho AF, Bataillon T, Dutheil JY. Variation of the adaptive substitution rate between species and within genomes. <cite>Evolutionary Ecology</cite> <time datetime='2020'>2020</time>;34:315–338</li>
+	      </ol>
+    
             </div>
           </div>
 
@@ -72,6 +127,7 @@
       <script src="assets/js/breakpoints.min.js"></script>
       <script src="assets/js/util.js"></script>
       <script src="assets/js/main.js"></script>
-
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </body>
 </html>
