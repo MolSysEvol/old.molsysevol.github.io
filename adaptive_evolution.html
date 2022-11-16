@@ -137,7 +137,35 @@
 
         <h2>The evolution of the rate of adaptive substitutions</h2>
 
-        <p>Under construction</h2>
+        <p>After investigating how the rate of adaptive substitutions varied along the genome, we asked how it evolves, that is, how it changes in time.
+        Since we do not have access to a record of all mutations (and their fitness effects) that occurred in the history of a gene, we took advantage of the fact that all genes in a genome did not evolve simultaneously.
+        Some genes are very ancient, shared by many species, while others originate more recently, sometimes only specific to one species.
+        Estimating the age of a gene can be done using an approach called <b>phylostratigraphy</b> (Figure 2A).
+        This procedure consists in assigning all genes in a genome to a taxonomic group, using similarity searches on sequence databases (see <a href="https://doi.org/10.1016/j.tig.2007.08.014">https://doi.org/10.1016/j.tig.2007.08.014</a>.
+        Together with Prof. Adam Eyre-Walker, from the university of Sussex, UK, we estimated the rates of adaptive and non-adpative sustitutions in each phylostrata of <i>D. melanogaster</i> and <i>A. thaliana</i>.
+        We report that <q cite='#Moutinho2020'>both rates decrease with gene age</q> (Figure 2B): as genes get older, they undergo stronger purifying selection and less adaptive mutations.    
+        </p>
+
+        <figure>
+          <img src="images/OmegaVsGeneAge.png" alt="The impact of gene age on the rate of adaptive and non-adaptive non-synonymous substitutions." width="850px" />
+          <figcaption style="width: 850px">
+            Figure 2: A phylostratigraphy approach to assess the evolution of the rates of adaptive (\(\omega_a\)) and non-adaptive (\(\omega_{na}\)) non synonymous substitutions across time. A) Phylostrata used numbered from 1 (the most ancient) to 12 or 15 (the most recent). Numbers bellow each node indicate the numer of genes in each strata. B) (\(\omega_a\)) and (\(\omega_{na}\)) per phylostrata, for <i>D. melanogaster</i> and <i>A. thaliana</i>.
+         </figcaption>
+        </figure>
+
+        <p>This pattern was robust to many potential confounding factors.
+        Younger genes are notably shorter and less expressed, which could epxlain their higher rate of adaptive substitution.
+        We controled for this possibility by employing a stratification approach, as well as a newly developed method named the MK-regression, which allows to jointly assess the impact of multiple factors on the rate of adaptive substitutions (see <a href="https://doi.org/10.1111/j.1558-5646.1998.tb01823.x"> https://doi.org/10.1111/j.1558-5646.1998.tb01823.x</a>).</p>
+
+        <p>The effect of gene age is consistent with the <b>adaptive walk</b> model of evolution, leading to a pattern of <b>diminishing returns</b> (see <a href="https://doi.org/10.1111/j.1558-5646.1998.tb01823.x">https://doi.org/10.1111/j.1558-5646.1998.tb01823.x</a>).
+        Gene evolution can be seen as a hike toward a moutain top, where young genes are further away from the peak and walk with large steps. As they get older and closer to the top, their evolution proceeds with smaller steps (see Figure 3 for a cartoon illustration).</p>
+
+        <figure>
+          <img src="images/fitness_peak_cartoon.png" alt="Cartoon representation of the adaptive walk model of evolution." width="425px" />
+          <figcaption style="width: 425px">
+            Figure 3: Young genes are further away from their fitness optimum and evolve faster.
+         </figcaption>
+        </figure>
 
         <h2>References</h2>
         <ol>
@@ -146,7 +174,8 @@
           <li id='Moutinho2022'>Moutinho AF, Eyre-Walker A, Dutheil JY. Strong evidence for the adaptive walk model of gene evolution in Drosophila and Arabidopsis. <cite>PLoS Biology</cite> <time datetime='2022'>2022</time>: <a href="https://doi.org/10.1371/journal.pbio.3001775">https://doi.org/10.1371/journal.pbio.3001775</a></li>
         </ol>
     
-            </div>
+
+        </div>
           </div>
 
         <!-- Footer -->
