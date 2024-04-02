@@ -51,8 +51,36 @@
               <h1>Evolutionary models of Gene Networks</h1>
               <span class="image main"><img src="images/plot_net_banner_colors.png" alt="" /></span>
 	      Image &copy; N. Puzović.
-              <p>Under construction.</p>
+              
+              <p>Stochastic processes shape living systems at multiple scales. The molecular processes that unfold the genetic information (the genotype) into a living organism (the phenotype) are termed <b>gene expression</b>.
+              When focusing on a single gene, gene expression refers to the biosynthesis of a macromolecule, usually a protein.
+              Taking one step back, gene expression englobes not only the synthesis of the said macromolecule, but also its quantity and production timing.
+              More generally, the expression of each gene is tightly regulated, often by molecules themselves produced by other genes.
+              As such, genes are inter-dependent of each others, and this inter-dependence can be summarized by <b>regulatory networks</b>.
+              </p>
+              
+              <p>The regulatory network abstraction may convey the image of cells as highly-deterministic machines. 
+              The macromolecules underlying these interactions, however, are typically present in small numbers within each cell and are subject to the randomness of diffusion and binding.
+              Regulatory interactions are better described as <b>stochastic processes</b>. With the advent of single-cell biology, it has been possible to experimentally assess expression <b>noise</b>.
+              An important finding was that this noise is not randomly distributed, but varies extensively from gene to gene.
+              We have showned that <q cite='#Barroso2018'>a major component of expression noise variation is the position of the gene within the network</q>.</p>
+              
+              <p>In her Ph-D work, Nataša Puzović developped models of regulatory networks evolution.
+              By extending the so-called Wagner model of regulatory networks, she added an evolvable component of expression noise.
+              In the extended model, a network is parametrized not only by its regulatory components (represented by a gene by gene matrix) but also a vector of noise parameters.
+              Employing this model in an <i>in silico</i> evolutionary experiment, we could demonstrate that <q cite='#Puzovic2023a'>selection at the network level leads to the evolution of differential expression noise at the gene level</q>.
+              This is explained by the propagation of noise within the network, which results in central genes being more constrained for noise than peripheral ones, therefore providing an explanation for the observed patterns in data.
+              While expression noise is generally under purifying selection, we further studies in which conditions expression noise could be favored by evolution.
+              Further extending our modeling framework, we showed that <q cite='#Puzovic2023a'>high expression noise can transiently evolve during the course of adaptation, but that only fluctuating selection driven by environmental changes lead to a maintenance of high expression noise, as part of a bet hedging strategy</q>.
+              </p>
             </div>
+
+            <h2>References</h2>
+            <ol>
+              <li id='Barroso2018'>Barroso GV, Puzović N, Dutheil JY. The evolution of gene-specific transcriptional noise is driven by selection at the pathway level. <cite>Genetics</cite> <time datetime='2018'>2018</time>;208(1):173-189. doi: https://doi.org/10.1534/genetics.117.300467</li>
+              <li id='Puzovic2023a'>Puzović N, Madaan T, Dutheil JY. Being noisy in a crowd: Differential selective pressure on gene expression noise in model gene regulatory networks. <cite>PLoS Computational Biology</cite> <time datetime='2023'>2023</time>; 19(4):e1010982. doi: https://doi.org/10.1371/journal.pcbi.1010982</li> 
+              <li id='Puzovic2023b'>Puzović N, Dutheil JY. When is gene expression noise advantageous? <cite>biorXiv.</cite> <time datetime='2023'>2023</time>. doi: https://doi.org/10.1101/2023.12.04.569843</li>
+            </ol>
           </div>
 
         <!-- Footer -->
